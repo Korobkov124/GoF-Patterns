@@ -1,3 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Hometask.Domain;
+using Hometask.Services;
 
-Console.WriteLine("Hello, World!");
+var order = new Order();
+var notificationService = new NotificationService();
+
+order.Attach(notificationService);
+
+order.SetStatus("Blocked");
+order.SetStatus("Deleted");
